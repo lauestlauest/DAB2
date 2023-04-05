@@ -1,12 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DABAssignment2.Model;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
 
 namespace DABAssignment2.Data
 {
-    internal class AUCanteens
+    
+
+    public class AUCanteens : DbContext
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433;Database=AUCanteens;User=sa;Password={bwv98uee};TrustServerCertificate=True");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>().HasKey(c => c.CustomerCPR);
+            modelBuilder.Entity<Reservations>().HasKey(r => r.MealId);
+            modelBuilder.Entity<Canteens>().HasKey(ca => ca.CanteenName);
+        }
+
+        public DbSet<Canteens> Canteens { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Ratings> Ratings { get; set; }
+        public DbSet<Reservations> Reservations { get; set; }
+        public DbSet<JITItems> JITItems { get; set; }
+
     }
 }
