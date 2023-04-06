@@ -11,7 +11,7 @@ namespace DABAssignment2.Model
         public int CustomerCPR;
         
         //Relations
-        public ICollection<Reservations> Reservations { get; }
-        public ICollection<Ratings> Ratings { get; }
+        public ICollection<Reservations>? Reservations { get; }
+        public ICollection<Ratings>? Ratings { get; }
     }
 }

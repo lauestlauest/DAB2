@@ -13,8 +13,8 @@ namespace DABAssignment2.Model
 
 
         //Table Elements
-        [Key]
-        public int MealId { get; set; } //Primart Key
+
+        public int MealId { get; set; } //Primary Key
 
         [ForeignKey("Customer")]
         public int? CustomerCPR { get; set; }

@@ -17,8 +17,8 @@ namespace DABAssignment2.Model
         //Relations
         public ICollection<Menu> Menu { get; }
 
-        public ICollection<Reservations> Reservations { get; }
+        public ICollection<Reservations>? Reservations { get; }
         
-        public ICollection<Ratings> Ratings { get; }
+        public ICollection<Ratings>? Ratings { get; }
     }
 }

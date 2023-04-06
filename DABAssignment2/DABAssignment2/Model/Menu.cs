@@ -29,6 +29,6 @@ namespace DABAssignment2.Model
 
         //Relations
         public Canteens Canteens { get; set; }
-        public Reservations Reservations { get; set; }
+        public Reservations? Reservations { get; set; }
     }
 }
