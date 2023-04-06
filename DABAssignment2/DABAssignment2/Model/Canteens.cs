@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
 namespace DABAssignment2.Model
@@ -8,19 +9,13 @@ namespace DABAssignment2.Model
         //Table Elements
         public string CanteenName;
 
-        public string WarmMealName;
-
-        public string StreetMealName;
-
-        public int AmountWarmMeal;
-
-        public int AmountStreetMeal;
-
+        [Required]
+        [Range(1301, 9990)]
         public int PostCode;
 
 
         //Relations
-        public ICollection<Menu> JitItems { get; }
+        public ICollection<Menu> Menu { get; }
 
         public ICollection<Reservations> Reservations { get; }
         

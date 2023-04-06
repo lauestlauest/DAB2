@@ -17,10 +17,10 @@ namespace DABAssignment2.Model
         public int MealId { get; set; } //Primart Key
 
         [ForeignKey("Customer")]
-        public int CustomerCPR { get; set; }
+        public int? CustomerCPR { get; set; }
 
         [ForeignKey("Menu")]
-        public string MenuItemId { get; set; }
+        public int MenuItemId { get; set; }
 
         [ForeignKey("Canteens")]
         public string CanteenName { get; set; }

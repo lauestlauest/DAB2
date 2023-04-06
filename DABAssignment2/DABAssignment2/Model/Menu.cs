@@ -16,7 +16,7 @@ namespace DABAssignment2.Model
         
         [Required]
         [Range(0,2)] // 0: warm  1: street  2: JIT 
-        public int Mealtype { get; set; }
+        public int MealType { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 1)]

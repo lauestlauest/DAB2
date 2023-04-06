@@ -10,7 +10,7 @@ namespace DABAssignment2.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433;Database=AUCanteens;User=sa;Password={bwv98uee};TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433;Database=AUCanteen;User=sa;Password={bwv98uee};TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -18,13 +18,14 @@ namespace DABAssignment2.Data
             modelBuilder.Entity<Customer>().HasKey(c => c.CustomerCPR);
             modelBuilder.Entity<Reservations>().HasKey(r => r.MealId);
             modelBuilder.Entity<Canteens>().HasKey(ca => ca.CanteenName);
+            modelBuilder.Entity<Menu>().HasKey(m => m.MenuItemsId);
         }
 
         public DbSet<Canteens> Canteens { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Ratings> Ratings { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
-        public DbSet<Menu> JITItems { get; set; }
+        public DbSet<Menu> Menu { get; set; }
 
     }
 }
