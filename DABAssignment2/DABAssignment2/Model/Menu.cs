@@ -8,31 +8,27 @@ using System.Threading.Tasks;
 
 namespace DABAssignment2.Model
 {
-    public class Ratings
+    public class Menu
     {
         //Table Elements
+        public int MenuItemsId { get; set; }
 
-        public int RatingsId { get; set; }
+        
+        [Required]
+        [Range(0,2)] // 0: warm  1: street  2: JIT 
+        public int Mealtype { get; set; }
 
         [Required]
-        [ForeignKey("Customer")]
-        public int CustomerCPR { get; set; }
+        [StringLength(100, MinimumLength = 1)]
+        public string MealName { get; set;}
 
         [Required]
         [ForeignKey("Canteens")]
         public string CanteenName { get; set; }
 
-        [Required]
-        [Range(1, 10)]
-        public int Rating { get; set; }
-
-        
-        public DateTime RatingDate { get; set; }
-        
 
         //Relations
-        public Customer Customer { get; set; }
         public Canteens Canteens { get; set; }
-
+        public Reservations Reservations { get; set; }
     }
 }

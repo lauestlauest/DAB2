@@ -24,7 +24,7 @@ namespace DABAssignment2.Data
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Ratings> Ratings { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
-        public DbSet<JITItems> JITItems { get; set; }
+        public DbSet<Menu> JITItems { get; set; }
 
     }
 }

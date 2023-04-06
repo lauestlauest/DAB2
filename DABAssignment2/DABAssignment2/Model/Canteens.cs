@@ -20,7 +20,7 @@ namespace DABAssignment2.Model
 
 
         //Relations
-        public ICollection<JITItems> JitItems { get; }
+        public ICollection<Menu> JitItems { get; }
 
         public ICollection<Reservations> Reservations { get; }
         
