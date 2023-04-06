@@ -11,6 +11,7 @@ namespace DABAssignment2.Model
     public class Menu
     {
         //Table Elements
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MenuItemsId { get; set; }
 
         
@@ -29,6 +30,6 @@ namespace DABAssignment2.Model
 
         //Relations
         public Canteens Canteens { get; set; }
-        public Reservations? Reservations { get; set; }
+        public Reservations Reservations { get; set; }
     }
 }

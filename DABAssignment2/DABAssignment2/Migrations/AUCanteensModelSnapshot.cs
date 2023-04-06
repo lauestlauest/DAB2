@@ -35,10 +35,7 @@ namespace DABAssignment2.Migrations
             modelBuilder.Entity("DABAssignment2.Model.Customer", b =>
                 {
                     b.Property<int>("CustomerCPR")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerCPR"));
 
                     b.HasKey("CustomerCPR");
 
@@ -48,10 +45,7 @@ namespace DABAssignment2.Migrations
             modelBuilder.Entity("DABAssignment2.Model.Menu", b =>
                 {
                     b.Property<int>("MenuItemsId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuItemsId"));
 
                     b.Property<string>("CanteenName")
                         .IsRequired()
@@ -75,10 +69,7 @@ namespace DABAssignment2.Migrations
             modelBuilder.Entity("DABAssignment2.Model.Ratings", b =>
                 {
                     b.Property<int>("RatingsId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingsId"));
 
                     b.Property<string>("CanteenName")
                         .IsRequired()
@@ -105,10 +96,7 @@ namespace DABAssignment2.Migrations
             modelBuilder.Entity("DABAssignment2.Model.Reservations", b =>
                 {
                     b.Property<int>("MealId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MealId"));
 
                     b.Property<string>("CanteenName")
                         .IsRequired()
@@ -205,7 +193,8 @@ namespace DABAssignment2.Migrations
 
             modelBuilder.Entity("DABAssignment2.Model.Menu", b =>
                 {
-                    b.Navigation("Reservations");
+                    b.Navigation("Reservations")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -15,6 +15,7 @@ namespace DABAssignment2
             using (var db = new AUCanteens())
             {
                 //Canteens
+                
                 db.Canteens.Add(new Canteens { CanteenName = "Kgl. Bibliotek", PostCode = 8000 });
                 db.Canteens.Add(new Canteens { CanteenName = "Kemisk", PostCode = 8300 });
                 db.Canteens.Add(new Canteens { CanteenName = "Matematisk", PostCode = 8000 });
@@ -32,24 +33,25 @@ namespace DABAssignment2
                 //Customer 
                 db.Customer.Add( new Customer { CustomerCPR = 1400 });
                 db.Customer.Add(new Customer { CustomerCPR = 1500 });
-                db.Customer.Add(new Customer { CustomerCPR = 1300 });
-                db.Customer.Add(new Customer { CustomerCPR = 1200 });
-
+                db.Customer.Add(new Customer { CustomerCPR = 1600 });
+                db.Customer.Add(new Customer { CustomerCPR = 1700 });
+                
+                
                 //Reservations 
-                db.Reservations.Add(new Reservations { MealId = 0, CustomerCPR = 1400, MenuItemId = 1, CanteenName = "Kgl.Bibliotek" });
-                db.Reservations.Add(new Reservations { MealId = 1, CustomerCPR = 1500, MenuItemId = 1, CanteenName = "Kgl.Bibliotek" });
-                db.Reservations.Add(new Reservations { MealId = 2, CustomerCPR = 1300, MenuItemId = 1, CanteenName = "Kgl.Bibliotek" });
-                db.Reservations.Add(new Reservations { MealId = 3, CustomerCPR = 1200, MenuItemId = 1, CanteenName = "Kgl.Bibliotek" });
-
+                db.Reservations.Add(new Reservations { MealId = 0, CustomerCPR = 1400, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
+                db.Reservations.Add(new Reservations { MealId = 1, CustomerCPR = 1500, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
+                db.Reservations.Add(new Reservations { MealId = 2, CustomerCPR = 1600, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
+                db.Reservations.Add(new Reservations { MealId = 3, CustomerCPR = 1700, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
+                
                 //Ratings
-                db.Ratings.Add(new Ratings {RatingsId = 0, CanteenName = "Kgl.Bibliotek" , CustomerCPR = 
-                    1400 });
-                db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl.Bibliotek", CustomerCPR = 1400 });
-                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl.Bibliotek", CustomerCPR = 1400 });
-                db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl.Bibliotek" , CustomerCPR = 1400 });
-
+                
+                db.Ratings.Add(new Ratings {RatingsId = 0, CanteenName = "Kgl. Bibliotek" , CustomerCPR = 1400 });
+                db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400 });
+                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400 });
+                db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl. Bibliotek" , CustomerCPR = 1400 });
+                
                 db.SaveChanges();
-
+                
             }
 
 

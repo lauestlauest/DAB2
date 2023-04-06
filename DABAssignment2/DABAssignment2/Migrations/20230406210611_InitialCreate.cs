@@ -27,7 +27,6 @@ namespace DABAssignment2.Migrations
                 columns: table => new
                 {
                     CustomerCPR = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
@@ -38,8 +37,7 @@ namespace DABAssignment2.Migrations
                 name: "Menu",
                 columns: table => new
                 {
-                    MenuItemsId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MenuItemsId = table.Column<int>(type: "int", nullable: false),
                     MealType = table.Column<int>(type: "int", nullable: false),
                     MealName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false)
@@ -59,8 +57,7 @@ namespace DABAssignment2.Migrations
                 name: "Ratings",
                 columns: table => new
                 {
-                    RatingsId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RatingsId = table.Column<int>(type: "int", nullable: false),
                     CustomerCPR = table.Column<int>(type: "int", nullable: false),
                     CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Rating = table.Column<int>(type: "int", nullable: false),
@@ -87,8 +84,7 @@ namespace DABAssignment2.Migrations
                 name: "Reservations",
                 columns: table => new
                 {
-                    MealId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MealId = table.Column<int>(type: "int", nullable: false),
                     CustomerCPR = table.Column<int>(type: "int", nullable: true),
                     MenuItemId = table.Column<int>(type: "int", nullable: false),
                     CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false)

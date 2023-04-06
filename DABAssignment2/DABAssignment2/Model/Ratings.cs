@@ -11,7 +11,7 @@ namespace DABAssignment2.Model
     public class Ratings
     {
         //Table Elements
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RatingsId { get; set; }
 
         [Required]

@@ -13,7 +13,7 @@ namespace DABAssignment2.Model
 
 
         //Table Elements
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MealId { get; set; } //Primary Key
 
         [ForeignKey("Customer")]

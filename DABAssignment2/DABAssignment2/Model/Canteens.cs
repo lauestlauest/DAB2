@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace DABAssignment2.Model
@@ -7,6 +8,7 @@ namespace DABAssignment2.Model
     public class Canteens
     {
         //Table Elements
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string CanteenName;
 
         [Required]
@@ -17,8 +19,8 @@ namespace DABAssignment2.Model
         //Relations
         public ICollection<Menu> Menu { get; }
 
-        public ICollection<Reservations>? Reservations { get; }
+        public ICollection<Reservations> Reservations { get; }
         
-        public ICollection<Ratings>? Ratings { get; }
+        public ICollection<Ratings> Ratings { get; }
     }
 }
