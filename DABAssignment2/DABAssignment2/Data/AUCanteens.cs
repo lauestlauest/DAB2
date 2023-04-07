@@ -19,7 +19,7 @@ namespace DABAssignment2.Data
             modelBuilder.Entity<Reservations>()
                 .HasKey(r => r.MealId);
             modelBuilder.Entity<Reservations>()
-                .HasOne(r => r.Menu).WithOne(r => r.Reservations).OnDelete(DeleteBehavior.ClientCascade);
+                .HasOne(r => r.Menu).WithMany(r => r.Reservations).OnDelete(DeleteBehavior.ClientCascade);
 
             modelBuilder.Entity<Canteens>().HasKey(ca => ca.CanteenName);
             modelBuilder.Entity<Menu>().HasKey(m => m.MenuItemsId);

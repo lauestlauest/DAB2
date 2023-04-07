@@ -40,7 +40,8 @@ namespace DABAssignment2.Migrations
                     MenuItemsId = table.Column<int>(type: "int", nullable: false),
                     MealType = table.Column<int>(type: "int", nullable: false),
                     MealName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    NrReservations = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -138,8 +139,7 @@ namespace DABAssignment2.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Reservations_MenuItemId",
                 table: "Reservations",
-                column: "MenuItemId",
-                unique: true);
+                column: "MenuItemId");
         }
 
         /// <inheritdoc />

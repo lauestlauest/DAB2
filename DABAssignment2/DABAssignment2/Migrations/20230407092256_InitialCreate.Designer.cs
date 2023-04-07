@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DABAssignment2.Migrations
 {
     [DbContext(typeof(AUCanteens))]
-    [Migration("20230407080325_InitialCreate")]
+    [Migration("20230407092256_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -60,6 +60,9 @@ namespace DABAssignment2.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("MealType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NrReservations")
                         .HasColumnType("int");
 
                     b.HasKey("MenuItemsId");
@@ -117,8 +120,7 @@ namespace DABAssignment2.Migrations
 
                     b.HasIndex("CustomerCPR");
 
-                    b.HasIndex("MenuItemId")
-                        .IsUnique();
+                    b.HasIndex("MenuItemId");
 
                     b.ToTable("Reservations");
                 });
@@ -166,8 +168,8 @@ namespace DABAssignment2.Migrations
                         .HasForeignKey("CustomerCPR");
 
                     b.HasOne("DABAssignment2.Model.Menu", "Menu")
-                        .WithOne("Reservations")
-                        .HasForeignKey("DABAssignment2.Model.Reservations", "MenuItemId")
+                        .WithMany("Reservations")
+                        .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
@@ -196,8 +198,7 @@ namespace DABAssignment2.Migrations
 
             modelBuilder.Entity("DABAssignment2.Model.Menu", b =>
                 {
-                    b.Navigation("Reservations")
-                        .IsRequired();
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

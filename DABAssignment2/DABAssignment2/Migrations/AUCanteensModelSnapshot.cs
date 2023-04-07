@@ -59,6 +59,9 @@ namespace DABAssignment2.Migrations
                     b.Property<int>("MealType")
                         .HasColumnType("int");
 
+                    b.Property<int>("NrReservations")
+                        .HasColumnType("int");
+
                     b.HasKey("MenuItemsId");
 
                     b.HasIndex("CanteenName");
@@ -114,8 +117,7 @@ namespace DABAssignment2.Migrations
 
                     b.HasIndex("CustomerCPR");
 
-                    b.HasIndex("MenuItemId")
-                        .IsUnique();
+                    b.HasIndex("MenuItemId");
 
                     b.ToTable("Reservations");
                 });
@@ -163,8 +165,8 @@ namespace DABAssignment2.Migrations
                         .HasForeignKey("CustomerCPR");
 
                     b.HasOne("DABAssignment2.Model.Menu", "Menu")
-                        .WithOne("Reservations")
-                        .HasForeignKey("DABAssignment2.Model.Reservations", "MenuItemId")
+                        .WithMany("Reservations")
+                        .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
@@ -193,8 +195,7 @@ namespace DABAssignment2.Migrations
 
             modelBuilder.Entity("DABAssignment2.Model.Menu", b =>
                 {
-                    b.Navigation("Reservations")
-                        .IsRequired();
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }
