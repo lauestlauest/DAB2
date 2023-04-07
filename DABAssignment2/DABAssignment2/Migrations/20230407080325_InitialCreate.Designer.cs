@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DABAssignment2.Migrations
 {
     [DbContext(typeof(AUCanteens))]
-    [Migration("20230406210611_InitialCreate")]
+    [Migration("20230407080325_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

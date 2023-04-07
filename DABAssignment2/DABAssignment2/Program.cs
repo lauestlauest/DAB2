@@ -22,11 +22,11 @@ namespace DABAssignment2
 
                 //Menu
                 db.Menu.Add(new Menu { MenuItemsId = 1, MealType = 0, MealName = "æg", CanteenName = "Kgl. Bibliotek" });
-                db.Menu.Add(new Menu { MenuItemsId = 2, MealType = 0, MealName = "æg", CanteenName = "Kgl. Bibliotek" });
-                db.Menu.Add(new Menu { MenuItemsId = 3, MealType = 0, MealName = "æg", CanteenName = "Kgl. Bibliotek" });
+                db.Menu.Add(new Menu { MenuItemsId = 2, MealType = 1, MealName = "æg", CanteenName = "Kgl. Bibliotek" });
+                db.Menu.Add(new Menu { MenuItemsId = 3, MealType = 2, MealName = "æg", CanteenName = "Kgl. Bibliotek" });
                 db.Menu.Add(new Menu { MenuItemsId = 4, MealType = 0, MealName = "æg", CanteenName = "Kemisk" });
-                db.Menu.Add(new Menu { MenuItemsId = 5, MealType = 0, MealName = "æg", CanteenName = "Kemisk" });
-                db.Menu.Add(new Menu { MenuItemsId = 6, MealType = 0, MealName = "æg", CanteenName = "Kemisk" });
+                db.Menu.Add(new Menu { MenuItemsId = 5, MealType = 2, MealName = "æg", CanteenName = "Kemisk" });
+                db.Menu.Add(new Menu { MenuItemsId = 6, MealType = 3, MealName = "æg", CanteenName = "Kemisk" });
                 db.Menu.Add(new Menu { MenuItemsId = 7, MealType = 0, MealName = "æg", CanteenName = "Matematisk" });
                 db.Menu.Add(new Menu { MenuItemsId = 8, MealType = 0, MealName = "æg", CanteenName = "Matematisk" });
 
@@ -54,13 +54,32 @@ namespace DABAssignment2
                 
             }
 
+            var dbs = new AUCanteens();
 
-            Console.WriteLine("Query 1");
-            Console.WriteLine("Query 2");
-            Console.WriteLine("Query 3");
-            Console.WriteLine("Query 4");
-            Console.WriteLine("Query 5");
-            Console.WriteLine("Query 6");
+            Console.WriteLine("Query 1................................................................");
+
+            var canteen = "Kgl. Bibliotek";
+
+            var dalymeals = dbs.Menu.Where(m => m.CanteenName == canteen && m.MealType != 2);
+            foreach (var Menu in dalymeals)
+            {
+                if (Menu.MealType == 0)
+                {
+                    Console.WriteLine("WarmMeal " + Menu.MealName);
+                }
+                else
+                {
+                    Console.WriteLine("StreetMeal " + Menu.MealName);
+                }
+            }
+
+
+
+            Console.WriteLine("Query 2................................................................");
+            Console.WriteLine("Query 3................................................................");
+            Console.WriteLine("Query 4................................................................");
+            Console.WriteLine("Query 5................................................................");
+            Console.WriteLine("Query 6................................................................");
 
             Console.WriteLine("Hello, DAB!");
         }
