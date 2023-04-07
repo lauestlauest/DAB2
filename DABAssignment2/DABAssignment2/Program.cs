@@ -1,4 +1,5 @@
-﻿using DABAssignment2.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using DABAssignment2.Data;
 using DABAssignment2.Model;
 
 namespace DABAssignment2
@@ -15,7 +16,7 @@ namespace DABAssignment2
             using (var db = new AUCanteens())
             {
                 //Canteens
-                /*
+                
                 db.Canteens.Add(new Canteens { CanteenName = "Kgl. Bibliotek", PostCode = 8000 });
                 db.Canteens.Add(new Canteens { CanteenName = "Kemisk", PostCode = 8300 });
                 db.Canteens.Add(new Canteens { CanteenName = "Matematisk", PostCode = 8000 });
@@ -45,15 +46,14 @@ namespace DABAssignment2
                 db.Reservations.Add(new Reservations { MealId = 4, CustomerCPR = null, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
                 
                 //Ratings
-                
-                db.Ratings.Add(new Ratings {RatingsId = 0, CanteenName = "Kgl. Bibliotek" , CustomerCPR = 1400 });
-                db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400 });
-                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400 });
-                db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl. Bibliotek" , CustomerCPR = 1400 });
+                db.Ratings.Add(new Ratings {RatingsId = 0, CanteenName = "Kgl. Bibliotek" , CustomerCPR = 1400 , Rating = 3});
+                db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400 , Rating = 3 });
+                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400 , Rating = 3 });
+                db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl. Bibliotek" , CustomerCPR = 1400 , Rating = 5 });
                 
                 
                 db.SaveChanges();
-                */
+                
             }
 
             var dbs = new AUCanteens();
@@ -139,6 +139,24 @@ namespace DABAssignment2
 
 
             Console.WriteLine("Query 6................................................................");
+
+
+
+            var avgerages = (from r in dbs.Ratings
+                    group r by r.CanteenName
+                    into grouping
+                    select new
+                    {
+                        grouping.Key,
+                        avg = grouping.Average(ra => ra.Rating)
+                    }).ToList();
+
+            foreach (var canteen in avgerages)
+            {
+                Console.WriteLine(canteen.Key + " " + canteen.avg);
+            }
+
+
 
             Console.WriteLine("Hello, DAB!");
         }
