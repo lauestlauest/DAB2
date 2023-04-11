@@ -14,7 +14,6 @@ namespace DAB_2_Solution.Migrations
             migrationBuilder.RenameColumn("CustomerCPR", "Customer", "AUid");
             migrationBuilder.RenameColumn("CustomerCPR", "Reservations", "AUid");
             migrationBuilder.RenameColumn("CustomerCPR", "Ratings", "AUid");
-
         }
 
         /// <inheritdoc />

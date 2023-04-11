@@ -24,13 +24,15 @@ namespace DAB_2_Solution.SeedDummyData
 
                 //Menu
                 db.Menu.Add(new Menu { MenuItemsId = 1, MealType = 0, MealName = "æg", CanteenName = "Kgl. Bibliotek", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 2, MealType = 1, MealName = "æg", CanteenName = "Kgl. Bibliotek", NrReservations = 4 });
-                db.Menu.Add(new Menu { MenuItemsId = 3, MealType = 2, MealName = "æg", CanteenName = "Kgl. Bibliotek", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 4, MealType = 0, MealName = "æg", CanteenName = "Kemisk", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 5, MealType = 2, MealName = "æg", CanteenName = "Kemisk", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 6, MealType = 3, MealName = "æg", CanteenName = "Kemisk", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 7, MealType = 0, MealName = "æg", CanteenName = "Matematisk", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 8, MealType = 0, MealName = "æg", CanteenName = "Matematisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 2, MealType = 1, MealName = "banan", CanteenName = "Kgl. Bibliotek", NrReservations = 4 });
+                db.Menu.Add(new Menu { MenuItemsId = 3, MealType = 2, MealName = "pizza", CanteenName = "Kgl. Bibliotek", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 4, MealType = 0, MealName = "kaffe", CanteenName = "Kemisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 5, MealType = 1, MealName = "æggekage", CanteenName = "Kemisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 6, MealType = 2, MealName = "pølser", CanteenName = "Kemisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 7, MealType = 0, MealName = "burger", CanteenName = "Matematisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 8, MealType = 1, MealName = "is", CanteenName = "Matematisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 8, MealType = 2, MealName = "pommes", CanteenName = "Matematisk", NrReservations = 0 });
+
 
                 //Customer 
                 db.Customer.Add(new Customer { CustomerCPR = 1400 });
