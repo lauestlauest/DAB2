@@ -12,7 +12,7 @@ namespace DABAssignment2.Model
     {
         //Table Elements
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int RatingsId { get; set; }
+        public int RatingsId { get; set; } //Primary Key
 
         [Required]
         [ForeignKey("Customer")]

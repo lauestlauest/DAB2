@@ -12,7 +12,7 @@ namespace DABAssignment2.Model
     {
         //Table Elements
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int MenuItemsId { get; set; }
+        public int MenuItemsId { get; set; } //Primary Key
 
         [Required]
         [Range(0,2)] // 0: warm  1: street  2: JIT 

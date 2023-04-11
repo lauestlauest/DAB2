@@ -10,8 +10,8 @@ namespace DABAssignment2.Model
     {
         //Table Elements
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CustomerCPR;
-        
+        public int CustomerCPR; //Primary Key
+
         //Relations
         public ICollection<Reservations> Reservations { get; }
         public ICollection<Ratings> Ratings { get; }

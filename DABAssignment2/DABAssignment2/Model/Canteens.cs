@@ -9,7 +9,7 @@ namespace DABAssignment2.Model
     {
         //Table Elements
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string CanteenName;
+        public string CanteenName; //Primary Key
 
         [Required]
         [Range(1301, 9990)]
