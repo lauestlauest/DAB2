@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System.Security.Cryptography.X509Certificates;
 
 #nullable disable
 
@@ -19,9 +20,9 @@ namespace DAB_2_Solution.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn("AUid", "Customer", "CustomerCPR");
-            migrationBuilder.RenameColumn("AUid", "Reservation", "CustomerCPR");
-            migrationBuilder.RenameColumn("AUid", "Ratings", "CustomerCPR");
+            migrationBuilder.Sql("EXEC sp_rename 'Customer.AUid', 'CustomerCPR'");
+            migrationBuilder.Sql("EXEC sp_rename 'Reservations.AUid', 'CustomerCPR'");
+            migrationBuilder.Sql("EXEC sp_rename 'Ratings.AUid', 'CustomerCPR'");
         }
     }
 }

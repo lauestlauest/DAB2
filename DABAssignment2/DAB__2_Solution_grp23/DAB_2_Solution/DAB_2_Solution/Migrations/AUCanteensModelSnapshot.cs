@@ -29,7 +29,7 @@ namespace DAB_2_Solution.Migrations
 
                     b.HasKey("CanteenName");
 
-                    b.ToTable("Canteens");
+                    b.ToTable("Canteens", (string)null);
                 });
 
             modelBuilder.Entity("DABAssignment2.Model.Customer", b =>
@@ -39,7 +39,7 @@ namespace DAB_2_Solution.Migrations
 
                     b.HasKey("CustomerCPR");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customer", (string)null);
                 });
 
             modelBuilder.Entity("DABAssignment2.Model.Menu", b =>
@@ -66,7 +66,7 @@ namespace DAB_2_Solution.Migrations
 
                     b.HasIndex("CanteenName");
 
-                    b.ToTable("Menu");
+                    b.ToTable("Menu", (string)null);
                 });
 
             modelBuilder.Entity("DABAssignment2.Model.Ratings", b =>
@@ -93,7 +93,7 @@ namespace DAB_2_Solution.Migrations
 
                     b.HasIndex("CustomerCPR");
 
-                    b.ToTable("Ratings");
+                    b.ToTable("Ratings", (string)null);
                 });
 
             modelBuilder.Entity("DABAssignment2.Model.Reservations", b =>
@@ -119,7 +119,7 @@ namespace DAB_2_Solution.Migrations
 
                     b.HasIndex("MenuItemId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("DABAssignment2.Model.Menu", b =>
