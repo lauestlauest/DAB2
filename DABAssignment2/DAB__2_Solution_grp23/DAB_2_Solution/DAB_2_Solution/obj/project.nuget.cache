@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7NDP79SwBMPnoc4tRNiOgDxUhtsqcln3nJ32QjYsKyN5f0CsIEFtrF/KtH9BKUEr+BN5iSSPReANUBYCNMczvQ==",
+  "dgSpecHash": "ydwGPH7oQivZlL3mkHrGAzl3yu7p1UOiuU3hHW/G/zn0DNO4z5xm4sdBTsH/YQRUksg03CsZQyBXQYpg+BcCSw==",
   "success": true,
   "projectFilePath": "C:\\Users\\nLaue\\Desktop\\tempres\\dab2\\DAB2\\DABAssignment2\\DAB__2_Solution_grp23\\DAB_2_Solution\\DAB_2_Solution\\DAB_2_Solution.csproj",
   "expectedPackageFiles": [
@@ -73,10 +73,10 @@
     "C:\\Users\\nLaue\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\nLaue\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\nLaue\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
+    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nLaue\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }
