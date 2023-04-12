@@ -31,7 +31,7 @@ namespace DAB_2_Solution.SeedDummyData
                 db.Menu.Add(new Menu { MenuItemsId = 6, MealType = 2, MealName = "pølser", CanteenName = "Kemisk", NrReservations = 0 });
                 db.Menu.Add(new Menu { MenuItemsId = 7, MealType = 0, MealName = "burger", CanteenName = "Matematisk", NrReservations = 0 });
                 db.Menu.Add(new Menu { MenuItemsId = 8, MealType = 1, MealName = "is", CanteenName = "Matematisk", NrReservations = 0 });
-                db.Menu.Add(new Menu { MenuItemsId = 8, MealType = 2, MealName = "pommes", CanteenName = "Matematisk", NrReservations = 0 });
+                db.Menu.Add(new Menu { MenuItemsId = 9, MealType = 2, MealName = "pommes", CanteenName = "Matematisk", NrReservations = 0 });
 
 
                 //Customer 

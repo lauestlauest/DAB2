@@ -12,6 +12,7 @@ namespace DAB_2_Solution.Migrations
         {
             migrationBuilder.DeleteData("Menu", "MealType", 2);
         }
+        protected override  void Down(MigrationBuilder migrationBuilder) { }
 
     }
 }

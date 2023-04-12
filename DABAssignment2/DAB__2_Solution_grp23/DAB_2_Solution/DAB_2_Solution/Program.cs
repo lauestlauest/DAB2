@@ -1,5 +1,10 @@
-﻿using DAB_2_Solution.SeedDummyData;
+﻿using System.Threading.Tasks.Dataflow;
+using DAB_2_Solution.SeedDummyData;
 using DABAssignment2.Data;
+using DABAssignment2.Model;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DAB_2_Solution
 {
@@ -10,8 +15,8 @@ namespace DAB_2_Solution
             Console.WriteLine("Hello, DAB!");
 
             //Seed Data..
-            Seed Dummy = new Seed();
-            Dummy.SeedDummyData();
+            //Seed Dummy = new Seed();
+            //Dummy.SeedDummyData();
 
 
 
@@ -95,7 +100,34 @@ namespace DAB_2_Solution
 
             Console.WriteLine("Query 5................................................................");
 
+            {
+                var canteen = "Matematisk";
 
+
+                var nearByCanceledMeals = (from r in db.Canteens
+                    join c in db.Reservations on r.CanteenName equals c.CanteenName into rc
+                    from rct in rc
+                    join m in db.Menu on rct.MenuItemId equals m.MenuItemsId
+                    where rct.CanteenName != canteen
+                    && rct.CustomerCPR == null
+                    && r.PostCode == (from tc in db.Canteens
+                        where tc.CanteenName == canteen
+                        select tc.PostCode).Single()
+                                           select new
+                        {
+                          Name = r.CanteenName,
+                          AvailbleMeal = m.MealName
+                        }).ToList();
+
+                foreach (var item in nearByCanceledMeals)
+                {
+                    Console.WriteLine(item.Name + " " + item.AvailbleMeal);
+                }
+
+
+
+
+            }
 
             Console.WriteLine("Query 6................................................................");
 

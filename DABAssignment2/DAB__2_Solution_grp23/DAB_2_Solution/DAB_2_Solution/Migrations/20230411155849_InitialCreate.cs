@@ -15,7 +15,8 @@ namespace DAB_2_Solution.Migrations
                 name: "Canteens",
                 columns: table => new
                 {
-                    CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    CanteenName = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PostCode = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
