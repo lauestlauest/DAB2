@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAB_2_Solution.SeedDummyData
 {
@@ -13,8 +14,11 @@ namespace DAB_2_Solution.SeedDummyData
         public void SeedDummyData()
         {
             Console.WriteLine("Seeding Dummy data...");
+            var options = new DbContextOptionsBuilder<AUCanteens>()
+				.UseInMemoryDatabase(databaseName: "AUCanteens")
+				.Options;
 
-            using (var db = new AUCanteens())
+            using (var db = new AUCanteens(options))
             {
                 //Canteens
 
@@ -49,13 +53,17 @@ namespace DAB_2_Solution.SeedDummyData
                 db.Reservations.Add(new Reservations { MealId = 4, CustomerCPR = null, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
 
                 //Ratings
-                db.Ratings.Add(new Ratings { RatingsId = 0, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 });
+                db.Ratings.Add(new Ratings { RatingsId = 0, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 2 });
                 db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 });
-                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 });
+                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 1 });
                 db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 5 });
+                db.Ratings.Add(new Ratings { RatingsId = 4, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 2 });
+                db.Ratings.Add(new Ratings { RatingsId = 5, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 5 });
+                db.Ratings.Add(new Ratings { RatingsId = 6, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 3 });
+                db.Ratings.Add(new Ratings { RatingsId = 7, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 4 });
 
 
-                db.SaveChanges();
+				db.SaveChanges();
             }
         }
     }
