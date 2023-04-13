@@ -10,7 +10,7 @@ namespace DABAssignment2.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433;Database=AUCanteenZeroWastAU;User=sa;Password={bwv98uee};TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=AUcanteens;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

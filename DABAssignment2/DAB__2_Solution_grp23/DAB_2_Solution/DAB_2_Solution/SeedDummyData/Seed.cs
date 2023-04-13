@@ -49,10 +49,10 @@ namespace DAB_2_Solution.SeedDummyData
                 db.Reservations.Add(new Reservations { MealId = 4, CustomerCPR = null, MenuItemId = 1, CanteenName = "Kgl. Bibliotek" });
 
                 //Ratings
-                db.Ratings.Add(new Ratings { RatingsId = 0, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 });
-                db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 });
-                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 });
-                db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 5 });
+                db.Ratings.Add(new Ratings { RatingsId = 0, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 , RatingDate = DateTime.UtcNow });
+                db.Ratings.Add(new Ratings { RatingsId = 1, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 , RatingDate = DateTime.UtcNow });
+                db.Ratings.Add(new Ratings { RatingsId = 2, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 3 , RatingDate = DateTime.UtcNow });
+                db.Ratings.Add(new Ratings { RatingsId = 3, CanteenName = "Kgl. Bibliotek", CustomerCPR = 1400, Rating = 5 , RatingDate = DateTime.UtcNow });
 
 
                 db.SaveChanges();
