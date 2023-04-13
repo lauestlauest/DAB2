@@ -14,11 +14,8 @@ namespace DAB_2_Solution.SeedDummyData
         public void SeedDummyData()
         {
             Console.WriteLine("Seeding Dummy data...");
-            var options = new DbContextOptionsBuilder<AUCanteens>()
-				.UseInMemoryDatabase(databaseName: "AUCanteens")
-				.Options;
 
-            using (var db = new AUCanteens(options))
+            using (var db = new AUCanteens())
             {
                 //Canteens
 
@@ -38,7 +35,7 @@ namespace DAB_2_Solution.SeedDummyData
                 db.Menu.Add(new Menu { MenuItemsId = 9, MealType = 2, MealName = "pommes", CanteenName = "Matematisk", NrReservations = 0 });
 
 
-                //Customer 
+                //CustomerCPR
                 db.Customer.Add(new Customer { CustomerCPR = 1400 });
                 db.Customer.Add(new Customer { CustomerCPR = 1500 });
                 db.Customer.Add(new Customer { CustomerCPR = 1600 });

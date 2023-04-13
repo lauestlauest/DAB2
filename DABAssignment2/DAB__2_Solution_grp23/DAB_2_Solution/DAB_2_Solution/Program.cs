@@ -6,6 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
+// Fix date in rating
+// Fix CustomerCPR: Change to CustomerId, two attributes CPR and AuId - delete cpr with migrations
+// Remember to rename CustomerCPR to CustomerId everywhere
+// Add last query: Payroll. Get whole DB ez lol <3
+
 namespace DAB_2_Solution
 {
     internal class Program
