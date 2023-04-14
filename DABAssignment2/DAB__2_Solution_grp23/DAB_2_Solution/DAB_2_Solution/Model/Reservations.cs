@@ -17,8 +17,8 @@ namespace DABAssignment2.Model
         public int MealId { get; set; } //Primary Key
 
         [ForeignKey("Customer")]
-        public int? CustomerCPR { get; set; }  
-
+        public int? AUid { get; set; }
+        public int? CustomerCPR { get; set; }
         [ForeignKey("Menu")]
         public int MenuItemId { get; set; }
 

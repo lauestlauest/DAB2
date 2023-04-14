@@ -16,7 +16,8 @@ namespace DABAssignment2.Model
 
         [Required]
         [ForeignKey("Customer")]
-        public int CustomerCPR { get; set; } 
+        public int AUid { get; set; } 
+        public int CustomerCPR { get; set; }
 
         [Required]
         [ForeignKey("Canteens")]

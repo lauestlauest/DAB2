@@ -21,14 +21,24 @@ namespace DAB_2_Solution
             Console.WriteLine("Hello, DAB!");
 
             //Seed Data..
-            Seed Dummy = new Seed();
-            Dummy.SeedDummyData();
+            //Seed Dummy = new Seed();
+            //Dummy.SeedDummyData();
 
 
 
             var db = new AUCanteens();
 
-            Console.WriteLine("Query 1: Get the day's menu options for a canteen given as input........");
+            var usingAUid = db.Database.ExecuteSqlRaw(
+	            $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{"Customer"}' AND COLUMN_NAME = '{"AUid"}'"
+            ) > 0;
+
+            if (!usingAUid)
+            {
+	            Console.WriteLine("UsingAUID is true");
+            }
+            
+
+			Console.WriteLine("Query 1: Get the day's menu options for a canteen given as input........");
             {
                 var canteen = "Kgl. Bibliotek";
 
@@ -54,10 +64,10 @@ namespace DAB_2_Solution
 			var reservations = (from r in db.Reservations
                                 join m in db.Menu
                                 on r.MenuItemId equals m.MenuItemsId
-                                where r.CustomerCPR == user
+                                where (usingAUid?r.CustomerCPR:r.AUid) == user
                                 select new
                                 {
-                                    MealId = r.MealId,
+                                    MealId = r.MenuItemId,
                                     MealName = m.MealName,
                                     CanteenName = r.CanteenName,
                                 }).ToList();
@@ -97,7 +107,7 @@ namespace DAB_2_Solution
                 var canceledReservations = (from r in db.Reservations
                                             join m in db.Menu
                                             on r.MenuItemId equals m.MenuItemsId
-                                            where r.CustomerCPR == null
+                                            where (usingAUid ? r.CustomerCPR : r.AUid) == null
                                             select new
                                             {
                                                 MealName = m.MealName
@@ -120,7 +130,7 @@ namespace DAB_2_Solution
                     from rct in rc
                     join m in db.Menu on rct.MenuItemId equals m.MenuItemsId
                     where rct.CanteenName != canteen
-                    && rct.CustomerCPR == null
+                    && (usingAUid ? rct.CustomerCPR : rct.AUid) == null
                     && r.PostCode == (from tc in db.Canteens
                         where tc.CanteenName == canteen
                         select tc.PostCode).Single()
