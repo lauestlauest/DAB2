@@ -27,7 +27,6 @@ namespace DABAssignment2.Data
 				modelBuilder.Entity<Canteens>().Property(c => c.PostCode);
 
 				modelBuilder.Entity<Menu>().HasKey(m => m.MenuItemsId);
-				modelBuilder.Entity<Staff>().HasKey(s => s.StaffId);
 			}
 
 			public DbSet<Canteens> Canteens { get; set; }

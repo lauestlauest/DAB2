@@ -69,10 +69,10 @@ namespace DAB_2_Solution.SeedDummyData
         {
 	        using (var db = new AUCanteens())
 	        {
-                db.Staff.Add(new Staff { /*StaffId = 0191914005,*/ Name = "Jens B.", Title = "Cook", Salary = 30700});
-                db.Staff.Add(new Staff { /*StaffId = 0102941234,*/ Name = "Mete C.", Title = "Waiter", Salary = 29000});
-                db.Staff.Add(new Staff {/* StaffId = 0412871937,*/ Name = "Mads D.", Title = "Waiter", Salary = 29000});
-                db.Staff.Add(new Staff {/* StaffId = 0201891278,*/ Name = "Lucile E.", Title = "Cook", Salary = 30700});
+                db.Staff.Add(new Staff { StaffId = 0191914005, Name = "Jens B.", Title = "Cook", Salary = 30700,CanteenName = "Kgl. Bibliotek" });
+                db.Staff.Add(new Staff { StaffId = 0102941234, Name = "Mete C.", Title = "Waiter", Salary = 29000, CanteenName = "Kgl. Bibliotek" });
+                db.Staff.Add(new Staff { StaffId = 0412871937, Name = "Mads D.", Title = "Waiter", Salary = 29000, CanteenName = "Kgl. Bibliotek" });
+                db.Staff.Add(new Staff { StaffId = 0201891278, Name = "Lucile E.", Title = "Cook", Salary = 30700, CanteenName = "Kgl. Bibliotek" });
                 db.SaveChanges();
 	        }
         }

@@ -23,7 +23,7 @@ namespace DAB_2_Solution
             //Seed Data..
             Seed Dummy = new Seed();
             //Dummy.SeedDummyData();
-            Dummy.SeedStaffData();
+            //Dummy.SeedStaffData();
 
 
 
@@ -163,7 +163,18 @@ namespace DAB_2_Solution
                 Console.WriteLine(canteen.Key + " has rating: " + canteen.avg);
             }
 
-            Console.WriteLine("Goodbye, DAB!");
+            Console.WriteLine("Query 7: Show the salary for all staff");
+
+            var staffSalaries = from s in db.Staff
+	            join c in db.Canteens on s.CanteenName equals c.CanteenName
+	            select new { Name = s.Name, Canteen = c.CanteenName, Salary = s.Salary };
+
+            foreach (var staff in staffSalaries)
+            {
+	            Console.WriteLine($"{staff.Name} - {staff.Canteen} - {staff.Salary}");
+            }
+
+			Console.WriteLine("Goodbye, DAB!");
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DAB_2_Solution.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace DABAssignment2.Model
@@ -22,5 +23,7 @@ namespace DABAssignment2.Model
         public ICollection<Reservations> Reservations { get; }
         
         public ICollection<Ratings> Ratings { get; }
+
+        public ICollection<Staff> Staff { get; }
     }
 }
