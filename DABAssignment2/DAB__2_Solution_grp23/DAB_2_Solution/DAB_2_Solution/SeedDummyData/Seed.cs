@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAB_2_Solution.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAB_2_Solution.SeedDummyData
@@ -58,10 +59,22 @@ namespace DAB_2_Solution.SeedDummyData
                 db.Ratings.Add(new Ratings { RatingsId = 5, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 5 });
                 db.Ratings.Add(new Ratings { RatingsId = 6, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 3 });
                 db.Ratings.Add(new Ratings { RatingsId = 7, CanteenName = "Matematisk", CustomerCPR = 1400, Rating = 4 });
-
+                
 
 				db.SaveChanges();
             }
+        }
+
+        public void SeedStaffData()
+        {
+	        using (var db = new AUCanteens())
+	        {
+                db.Staff.Add(new Staff { /*StaffId = 0191914005,*/ Name = "Jens B.", Title = "Cook", Salary = 30700});
+                db.Staff.Add(new Staff { /*StaffId = 0102941234,*/ Name = "Mete C.", Title = "Waiter", Salary = 29000});
+                db.Staff.Add(new Staff {/* StaffId = 0412871937,*/ Name = "Mads D.", Title = "Waiter", Salary = 29000});
+                db.Staff.Add(new Staff {/* StaffId = 0201891278,*/ Name = "Lucile E.", Title = "Cook", Salary = 30700});
+                db.SaveChanges();
+	        }
         }
     }
 }

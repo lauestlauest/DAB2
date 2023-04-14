@@ -1,6 +1,7 @@
 ﻿using DABAssignment2.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
+using DAB_2_Solution.Model;
 
 namespace DABAssignment2.Data
 {
@@ -26,6 +27,7 @@ namespace DABAssignment2.Data
 				modelBuilder.Entity<Canteens>().Property(c => c.PostCode);
 
 				modelBuilder.Entity<Menu>().HasKey(m => m.MenuItemsId);
+				modelBuilder.Entity<Staff>().HasKey(s => s.StaffId);
 			}
 
 			public DbSet<Canteens> Canteens { get; set; }
@@ -33,6 +35,7 @@ namespace DABAssignment2.Data
 			public DbSet<Ratings> Ratings { get; set; }
 			public DbSet<Reservations> Reservations { get; set; }
 			public DbSet<Menu> Menu { get; set; }
+			public DbSet<Staff> Staff { get; set; }
 
 		}
 	}

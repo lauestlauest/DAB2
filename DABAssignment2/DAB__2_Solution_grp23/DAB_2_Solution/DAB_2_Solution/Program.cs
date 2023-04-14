@@ -21,8 +21,9 @@ namespace DAB_2_Solution
             Console.WriteLine("Hello, DAB!");
 
             //Seed Data..
-            //Seed Dummy = new Seed();
+            Seed Dummy = new Seed();
             //Dummy.SeedDummyData();
+            Dummy.SeedStaffData();
 
 
 
